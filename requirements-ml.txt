@@ -1,0 +1,5 @@
+# Optional: ML detection and SORT tracking (see model_detector.py, tracker_sort.py)
+-r requirements.txt
+ultralytics>=8.0
+filterpy>=1.4.5
+scipy>=1.7

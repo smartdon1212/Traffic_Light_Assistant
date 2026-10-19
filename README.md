@@ -1,5 +1,9 @@
 # Traffic Light Assistant 🚦
 
+[![CI](https://github.com/smartdon1212/Traffic_Light_Assistant/actions/workflows/ci.yml/badge.svg)](https://github.com/smartdon1212/Traffic_Light_Assistant/actions/workflows/ci.yml)
+![Python](https://img.shields.io/badge/python-3.10%2B-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+
 A lightweight, color-based traffic light detection system that can recognize red, yellow, and green traffic lights from camera feeds, video files, or static images. Perfect for quick testing and demos.
 
 ## ✨ Features
@@ -18,20 +22,23 @@ A lightweight, color-based traffic light detection system that can recognize red
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Python 3.8+
+- Python 3.10+
 - pip
 
 ### Installation
 
 ```powershell
-# Install dependencies
+# Install core dependencies (detection + web UI)
 python -m pip install -r requirements.txt
+
+# Optional: ML detection (YOLOv8) and SORT tracking
+python -m pip install -r requirements-ml.txt
 
 # Run tests
 pytest tests/ -v
 
-# Try on an image
-python main.py --source images/img.jpg --no-show
+# Try on a bundled sample image
+python main.py --source images/red.png --no-show
 ```
 
 ## 📖 Usage Examples
@@ -163,9 +170,13 @@ python -c "import cv2; print(cv2.VideoCapture(0).isOpened())"
 
 ## 📦 Requirements
 
+Core (`requirements.txt`):
 - `opencv-python>=4.5.5`
 - `numpy>=1.21`
+- `flask>=2.0`
 - `pytest>=7.0`
+
+Optional ML detection and tracking (`requirements-ml.txt`): `ultralytics`, `filterpy`, `scipy`
 
 ## 🚀 Next Steps
 

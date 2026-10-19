@@ -1,3 +1,5 @@
+# Core (detection + web UI)
 opencv-python>=4.5.5
 numpy>=1.21
+flask>=2.0
 pytest>=7.0
